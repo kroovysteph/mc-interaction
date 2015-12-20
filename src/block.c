@@ -57,9 +57,11 @@ char * set_block_coords(int x1, int y1, int z1, int x2, int y2, int z2, char blo
 	strcat(cmd, block);
 	strcat(cmd, "\n\"");
 	
+	
 	char * result = malloc(sizeof(char) * (strlen(cmd)+1));
 	
-	strcpy(result, cmd);
+	memcpy(result, cmd, strlen(cmd)+1);
 	
+	printf("bis hier hin kommen wir!\n");
 	return result;
 }
