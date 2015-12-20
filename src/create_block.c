@@ -3,7 +3,6 @@
 void create_block(char * cmd)
 {
 	//Führt den fertig erzeugten String auf der Konsole auf dem Server aus
-	
 	int status;
 	
     //syntax:                                      /fill <x1> <y1> <z1> <x2> <y2> <z2> <dirt>
@@ -12,5 +11,4 @@ void create_block(char * cmd)
 	status = system(cmd);
 	
 	free(cmd);
-	
 }

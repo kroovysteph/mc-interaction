@@ -2,11 +2,11 @@
 
 void draw_square(void)
 {
-    for (int y = 0; y < 20; y++) 
+    for (int y = 0; y < 5; y++) 
     {
-        for (int x = 0; x < 20; x++) 
+        for (int x = 0; x < 5; x++) 
         {
-            create_block(set_block_coords(x, 90, y, x, 90, y, "dirt"));
+            create_block(set_block_coords(x, 0, y, x, 0, y, "dirt"));
         }
     }
 }

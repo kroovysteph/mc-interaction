@@ -21,8 +21,6 @@ char * set_block_coords(int x1, int y1, int z1, int x2, int y2, int z2, char blo
     //syntax:                                      /fill <x1> <y1> <z1> <x2> <y2> <z2> <dirt>
 	//char cmd[] = "tmux send-keys -t mc-console \"/fill                                     \n\"";
 	
-	char cmd[] = "tmux send-keys -t mc console \"/fill ";
-	
 	//Koordinaten mit Offset
 	x1 = (-91 - x1);
 	y1 = (100 + y1);
@@ -32,36 +30,34 @@ char * set_block_coords(int x1, int y1, int z1, int x2, int y2, int z2, char blo
 	z2 = (-50 - z2);
 	
 	//Buffer Strings
-	char s_x1[] = "";
-	char s_y1[] = "";
-	char s_z1[] = "";
-	char s_x2[] = "";
-	char s_y2[] = "";
-	char s_z2[] = "";
+	char *s_x1 = s_of_int(x1);
+	char *s_y1 = s_of_int(y1);
+	char *s_z1 = s_of_int(z1);
+	char *s_x2 = s_of_int(x2);
+	char *s_y2 = s_of_int(y2);
+	char *s_z2 = s_of_int(z2);
 	
-	//Koordinaten in Buffer Speichern
-	sprintf(s_x1, "%d", x1);
-	sprintf(s_y1, "%d", y1);
-	sprintf(s_z1, "%d", z1);
-	sprintf(s_x2, "%d", x2);
-	sprintf(s_y2, "%d", y2);
-	sprintf(s_z2, "%d", z2);
+	
+	
+	char *cmd = malloc(sizeof(char) * 36);	
+	cmd = "tmux send-keys -t mc-console \"/fill ";
 	
 	//CMD Befehl zusammensetzen
-	strcat(cmd, s_x1); strcat(cmd, " ");
-	strcat(cmd, s_y1); strcat(cmd, " ");
-	strcat(cmd, s_z1); strcat(cmd, " ");
-	strcat(cmd, s_x2); strcat(cmd, " ");
-	strcat(cmd, s_y2); strcat(cmd, " ");
-	strcat(cmd, s_z2); strcat(cmd, " ");
-	strcat(cmd, block);
-	strcat(cmd, "\n\"");
+	cmd = s_concat(cmd, s_x1);
+	cmd = s_concat(cmd, " ");
+	cmd = s_concat(cmd, s_y1);
+	cmd = s_concat(cmd, " ");
+	cmd = s_concat(cmd, s_z1); 
+	cmd = s_concat(cmd, " ");
+	cmd = s_concat(cmd, s_x2); 
+	cmd = s_concat(cmd, " ");
+	cmd = s_concat(cmd, s_y2); 
+	cmd = s_concat(cmd, " ");
+	cmd = s_concat(cmd, s_z2); 
+	cmd = s_concat(cmd, " ");
+	cmd = s_concat(cmd, block);
+	cmd = s_concat(cmd, "\n\"");
+	printf("%s\n", cmd);
 	
-	
-	char * result = malloc(sizeof(char) * (strlen(cmd)+1));
-	
-	memcpy(result, cmd, strlen(cmd)+1);
-	
-	printf("bis hier hin kommen wir!\n");
-	return result;
+	return cmd;
 }
