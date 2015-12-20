@@ -47,12 +47,12 @@ char * set_block_coords(int x1, int y1, int z1, int x2, int y2, int z2, char blo
 	sprintf(s_z2, "%d", z2);
 	
 	//CMD Befehl zusammensetzen
-	strcat(cmd, x1); strcat(cmd, " ");
-	strcat(cmd, y1); strcat(cmd, " ");
-	strcat(cmd, z1); strcat(cmd, " ");
-	strcat(cmd, x2); strcat(cmd, " ");
-	strcat(cmd, y2); strcat(cmd, " ");
-	strcat(cmd, z2); strcat(cmd, " ");
+	strcat(cmd, s_x1); strcat(cmd, " ");
+	strcat(cmd, s_y1); strcat(cmd, " ");
+	strcat(cmd, s_z1); strcat(cmd, " ");
+	strcat(cmd, s_x2); strcat(cmd, " ");
+	strcat(cmd, s_y2); strcat(cmd, " ");
+	strcat(cmd, s_z2); strcat(cmd, " ");
 	strcat(cmd, block);
 	strcat(cmd, "\n\"");
 	
