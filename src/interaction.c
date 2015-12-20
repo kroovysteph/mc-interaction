@@ -3,7 +3,7 @@
 int main(void)
 {
 	//Führt die nötigen Funktionen aus^
-	draw_square();
+	draw_rectangle();
 	
 	return 0;
 }
