@@ -20,9 +20,14 @@ char * set_block_coords(int x1, int y1, int z1, int x2, int y2, int z2, char blo
     
     //syntax:                                      /fill <x1> <y1> <z1> <x2> <y2> <z2> <dirt>
 	//char cmd[] = "tmux send-keys -t mc-console \"/fill                                     \n\"";
-	//char *cmd = malloc(sizeof(char) * 100);
+	char * cmd = malloc(sizeof(char) * 100);
 	
-	public char cmd[] = "tmux send-keys -t mc console \"/fill ";
+	for (int i = 0; cmd[i] != '\0'; i++)
+	{
+		cmd[i] = ' ';
+	}
+	
+	cmd[] = "tmux send-keys -t mc console \"/fill ";
 	
 	//Koordinaten mit Offset
 	x1 = (-91 - x1);
