@@ -1,6 +1,6 @@
 #include "minecraft.h"
 
-void create_block(String cmd)
+void create_block(char * cmd)
 {
 	//Führt den fertig erzeugten String auf der Konsole auf dem Server aus
 	

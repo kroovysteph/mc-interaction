@@ -1,6 +1,6 @@
 #include "minecraft.h"
 
-String set_block_coords(int x1, int y1, int z1, int x2, int y2, int z2, String block)
+char * set_block_coords(int x1, int y1, int z1, int x2, int y2, int z2, char block[])
 {
     //Produziert den String der für die Konsole auf dem Server lesbar ist aus der Funktion, die das Bild einliest
     /*
@@ -20,7 +20,7 @@ String set_block_coords(int x1, int y1, int z1, int x2, int y2, int z2, String b
     
     //syntax:                                      /fill <x1> <y1> <z1> <x2> <y2> <z2> <dirt>
 	//char cmd[] = "tmux send-keys -t mc-console \"/fill                                     \n\"";
-	String cmd = "tmux send-keys -t mc console \"/fill "
+	char cmd[] = "tmux send-keys -t mc console \"/fill "
 	
 	//Koordinaten mit Offset
 	x1 = (-91 - x1);
@@ -31,12 +31,12 @@ String set_block_coords(int x1, int y1, int z1, int x2, int y2, int z2, String b
 	z2 = (-50 - z2);
 	
 	//Buffer Strings
-	String s_x1 = "";
-	String s_y1 = "";
-	String s_z1 = "";
-	String s_x2 = "";
-	String s_y2 = "";
-	String s_z2 = "";
+	char s_x1[] = "";
+	char s_y1[] = "";
+	char s_z1[] = "";
+	char s_x2[] = "";
+	char s_y2[] = "";
+	char s_z2[] = "";
 	
 	//Koordinaten in Buffer Speichern
 	sprintf(s_x1, "%d", x1);
@@ -55,4 +55,7 @@ String set_block_coords(int x1, int y1, int z1, int x2, int y2, int z2, String b
 	strcat(cmd, z2); strcat(cmd, " ");
 	strcat(cmd, block);
 	strcat(cmd, "\n\"");
+	
+	
+	return cmd;
 }
