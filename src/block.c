@@ -57,7 +57,6 @@ char * set_block_coords(int x1, int y1, int z1, int x2, int y2, int z2, char blo
 	cmd = s_concat(cmd, " ");
 	cmd = s_concat(cmd, block);
 	cmd = s_concat(cmd, "\n\"");
-	printf("%s\n", cmd);
 	
 	return cmd;
 }
