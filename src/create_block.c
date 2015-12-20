@@ -11,4 +11,6 @@ void create_block(char * cmd)
 	
 	status = system(cmd);
 	
+	free(cmd);
+	
 }
