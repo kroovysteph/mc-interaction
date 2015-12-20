@@ -113,8 +113,8 @@ int s_length(char s[]) {
 
 int main(void) {
 	
-	//print_to_mc();
-	create_block(set_block_coords(0, 1, 2, 3, 4, 5, "dirt"));
+	print_to_mc();
+	//create_block(set_block_coords(0, 1, 2, 3, 4, 5, "dirt"));
 	
 	
 	return 0;
