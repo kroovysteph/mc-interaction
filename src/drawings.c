@@ -14,5 +14,5 @@ void draw_square(void)
 
 void draw_rectangle(void)
 {
-    create_block(set_block_coords(0, 255, 0, 100, 255, 50, "dirt"));
+    create_block(set_block_coords(0, 255, 0, 20, 255, 20, "dirt"));
 }
