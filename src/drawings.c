@@ -6,7 +6,7 @@ void draw_square(void)
     {
         for (int x = 0; x < 50; x++) 
         {
-            create_block(set_block_coords(x, 100, y, x, 100, y, "air"));
+            create_block(set_block_coords(x, 255, y, x, 255, y, "diamond_ore"));
         }
     }
 }
